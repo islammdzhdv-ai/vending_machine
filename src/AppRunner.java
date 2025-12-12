@@ -25,7 +25,7 @@ public class AppRunner {
     }
 
     public static void run() {
-        PaymentAcceptor acceptor = new CoinAcceptor(0); // можно заменить на другой приёмник
+        PaymentAcceptor acceptor = new CoinAcceptor(0);
         AppRunner app = new AppRunner(acceptor);
         while (!isExit) {
             app.startSimulation();
@@ -123,4 +123,11 @@ public class AppRunner {
     private void print(String msg) {
         System.out.println(msg);
     }
+
+    public void runLoop() {
+        while (!isExit) {
+            startSimulation();
+        }
+    }
+
 }
